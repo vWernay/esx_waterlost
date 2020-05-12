@@ -1,7 +1,7 @@
 # esx_perderitens
 FXServer ESX Perder Itens na Água
 
-Ao você player na água ele perde seus eletrônicos
+Ao cair na água você perde seus eletrônicos
 e algumas comidas.
 
 # Observações
