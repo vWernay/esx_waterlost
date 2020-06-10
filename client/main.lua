@@ -14,9 +14,8 @@ end)
 
 Citizen.CreateThread(function()
     while true do
-		Citizen.Wait(60)
+		Citizen.Wait(8000)
 		if IsPedSwimming(PlayerPedId(), false) then
-			--print('O Player está nadando!')
 			TriggerServerEvent('esx_perderitens:perderTudo')
 		end
 	end	
