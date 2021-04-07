@@ -31,7 +31,7 @@
 * **Money** - Set `true` if you want the player to lose all money when they into the water or `false` if you don't want.
 * **BlackMoney** - Set `true` if you want the player to lose all Black Money/Dirty Money when they into the water or `false` if you don't want.
 * **Items** - The items you want the player to lose when they into the water.
-    * **give_burn** - Give burned item? If yes, place the `item` to be given, if not, put `false`.
+    * **give_burn** - Give item after falling into the water? If yes, put the `item` to be given, if not, put` false`.
 
 ## Dependencies
 
