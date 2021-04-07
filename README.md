@@ -31,8 +31,7 @@
 * **Money** - Set `true` if you want the player to lose all money when they into the water or `false` if you don't want.
 * **BlackMoney** - Set `true` if you want the player to lose all Black Money/Dirty Money when they into the water or `false` if you don't want.
 * **Items** - The items you want the player to lose when they into the water.
-    * **encoding** - The file format (`png`, `jpg` or `webp`)
-    * **quality** - The image quality from 0.0 to 1.0.
+    * **give_burn** - Give burned item? If yes, place the `item` to be given, if not, put `false`.
 
 ## Dependencies
 
