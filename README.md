@@ -9,7 +9,7 @@
   </a>
 </p>
 
-> You can also read this in [Portuguese](https://github.com/vWernay/esx_perderitens/blob/master/README.pt.md).
+> You can also read this in [Portuguese](https://github.com/vWernay/esx_perderitens/blob/master/README.ptbr.md).
 
 `esx_perderitens` is a resource for [FiveM](https://fivem.net) which detects if the player is in the water and removes the wanted items.
 
