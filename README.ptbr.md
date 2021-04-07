@@ -28,8 +28,7 @@
 * **Money** - Defina `true` se quiser que o jogador perca todo o `Dinheiro` quando entrar na água ou `false` caso não queira.
 * **BlackMoney** - Defina `true` se quiser que o jogador perca todo o `Dinheiro Sujo` quando entrar na água ou `false` caso não queira.
 * **Items** - Os itens que você deseja que o jogador perca ao entrar na água.
-    * **encoding** - The file format (`png`, `jpg` or `webp`)
-    * **quality** - The image quality from 0.0 to 1.0.
+    * **give_burn** - Dar item após cair na agua? Se sim coloque o `item` a ser dado, se não, coloque `false`.
 
 ## Dependências
 
