@@ -2,8 +2,8 @@
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 -----------------------------------------------------------
-RegisterServerEvent('esx_perderitens:caiuNaAgua')
-AddEventHandler('esx_perderitens:caiuNaAgua', function()
+RegisterServerEvent('esx_waterlost:caiuNaAgua')
+AddEventHandler('esx_waterlost:caiuNaAgua', function()
 	local playerId = source
 	local xPlayer = ESX.GetPlayerFromId(playerId)
 	local xMoney = xPlayer.getMoney()
