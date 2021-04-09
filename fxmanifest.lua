@@ -2,13 +2,11 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'victorBOY'
-description 'Perder itens ao cair na água.'
-version '1.0.2'
+description 'Lose items on falling into Water'
+version '1.1'
 
 lua54 'yes'
-client_scripts {
-	'client/*.lua'
-}
+client_script 'client/*.lua'
 
 server_scripts {
 	'@es_extended/locale.lua',
