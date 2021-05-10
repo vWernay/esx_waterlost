@@ -18,7 +18,7 @@ AddEventHandler('esx_waterlost:caiuNaAgua', function()
 			end
 
 			TriggerClientEvent('esx:showNotification', playerId, _U(item))
-			--xPlayer.triggerEvent('esx:showNotification', v.message)
+			--xPlayer.triggerEvent('esx:showNotification', _U(item))
 		end
 	end
 
@@ -27,7 +27,7 @@ AddEventHandler('esx_waterlost:caiuNaAgua', function()
 			xPlayer.removeMoney(xMoney)
 			xPlayer.addInventoryItem('wet_money', xMoney)
 			TriggerClientEvent('esx:showNotification', playerId, _U('money'))
-			--xPlayer.triggerEvent('esx:showNotification', Config.Money.message)
+			--xPlayer.triggerEvent('esx:showNotification', _U('money'))
 		end	
 	end
 
@@ -37,7 +37,7 @@ AddEventHandler('esx_waterlost:caiuNaAgua', function()
 			xPlayer.addInventoryItem('wet_black_money', xBlackMoney)
 
 			TriggerClientEvent('esx:showNotification', playerId, _U('black_money'))
-			--xPlayer.triggerEvent('esx:showNotification', Config.BlackMoney.message)
+			--xPlayer.triggerEvent('esx:showNotification', _U('black_money'))
 		end	
 	end
 end)
