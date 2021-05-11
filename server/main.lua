@@ -3,10 +3,8 @@ ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 -----------------------------------------------------------
 local items = Config.Items
-AddEventHandler('onResourceStart', function(resourceName)
-	if (GetCurrentResourceName() ~= resourceName) then
-	  return
-	end
+MySQL.ready(function()
+	Wait(2500)
 	for k,v in pairs(items) do
 		local item = ESX.Items[k]
 
@@ -18,7 +16,7 @@ AddEventHandler('onResourceStart', function(resourceName)
 			end
 		end
 	end
-end)  
+end)
 
 RegisterServerEvent('esx_waterlost:caiuNaAgua')
 AddEventHandler('esx_waterlost:caiuNaAgua', function()
