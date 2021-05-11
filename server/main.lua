@@ -4,17 +4,17 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 -----------------------------------------------------------
 local items = Config.Items
 MySQL.ready(function()
-	Wait(2500)
+	Wait(5000)
 	for k,v in pairs(items) do
-		local item = ESX.Items[k]
-
-		if not item then
-			if (Config.Locale == 'br' or Config.Locale == 'pt') then
-				print(('	[esx_waterlost] [^3AVISO^7] Ignnorando o item inválido "%s", por favor certifique-se de que este item realmente existe'):format(k))
-			else
-				print(('	[esx_waterlost] [^3WARNING^7] Ignoring invalid item "%s", please make sure that item really exists'):format(k))
+		MySQL.Async.fetchAll('SELECT name FROM items WHERE name = @name', { ['@name'] = k }, function(result)
+			if not result[1] then
+				if (Config.Locale == 'br' or Config.Locale == 'pt') then
+					print(('	[esx_waterlost] [^3AVISO^7] Ignnorando o item inválido "%s", por favor certifique-se de que este item realmente existe'):format(k))
+				else
+					print(('	[esx_waterlost] [^3WARNING^7] Ignoring invalid item "%s", please make sure that item really exists'):format(k))
+				end
 			end
-		end
+		end)
 	end
 end)
 
