@@ -2,23 +2,42 @@
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 -----------------------------------------------------------
+local items = Config.Items
+AddEventHandler('onResourceStart', function(resourceName)
+	if (GetCurrentResourceName() ~= resourceName) then
+	  return
+	end
+	for k,v in pairs(items) do
+		local item = ESX.Items[k]
+
+		if not item then
+			if (Config.Locale == 'br' or Config.Locale == 'pt') then
+				print(('	[esx_waterlost] [^3AVISO^7] Ignnorando o item inválido "%s", por favor certifique-se de que este item realmente existe'):format(k))
+			else
+				print(('	[esx_waterlost] [^3WARNING^7] Ignoring invalid item "%s", please make sure that item really exists'):format(k))
+			end
+		end
+	end
+end)  
+
 RegisterServerEvent('esx_waterlost:caiuNaAgua')
 AddEventHandler('esx_waterlost:caiuNaAgua', function()
 	local playerId = source
 	local xPlayer = ESX.GetPlayerFromId(playerId)
 	local xMoney = xPlayer.getMoney()
 	local xBlackMoney = xPlayer.getAccount('black_money').money 
-	items = Config.Items
 	for item, info in pairs(items) do
-		local xItem = xPlayer.getInventoryItem(item)
-		if (xItem.count > 0) then
-			xPlayer.removeInventoryItem(item, xItem.count)
-			if (info.give_burn) then
-				xPlayer.addInventoryItem(info.give_burn, xItem.count)
-			end
+		if ESX.Items[item] then
+			local xItem = xPlayer.getInventoryItem(item)
+			if (xItem.count > 0) then
+				xPlayer.removeInventoryItem(item, xItem.count)
+				if (info.give_burn) then
+					xPlayer.addInventoryItem(info.give_burn, xItem.count)
+				end
 
-			TriggerClientEvent('esx:showNotification', playerId, _U(item))
-			--xPlayer.triggerEvent('esx:showNotification', _U(item))
+				TriggerClientEvent('esx:showNotification', playerId, _U(item))
+				--xPlayer.triggerEvent('esx:showNotification', v.message)
+			end
 		end
 	end
 
